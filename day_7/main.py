@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-def get_input(file):
+def parse(file):
     with open(file, 'r') as f:
         return list(map(lambda x: x.strip(), f.readlines()))
 
@@ -33,7 +33,7 @@ def interpret(lines):
             files[dir].append(parts)
     for key, value in files.items():
         files[key] = sorted(value, key=lambda x: x[0] == 'dir', reverse=True)
-    return dirs[1:], files
+    return files
 
 def shallow_evaluation(files):
     for key, val in files.items():
@@ -67,8 +67,8 @@ def evaluate_sizes(files):
     recursive_evaluation(files, '/')  # looking inside dirs
     
 if __name__ == "__main__":        
-    available, required = 70000000, 30000000
-    _, files = interpret(get_input('input.txt'))
+    available, required = 70_000_000, 30_000_000
+    files = interpret(parse('input.txt'))
     evaluate_sizes(files)
     print(f"Part 1: {sum(x[1] for x in list(filter(lambda x: x[1] < 100000, get_sizes(files).items())))}")
     print(f"Part 2: {find_dir_to_delete(files, available, required)[1]}")

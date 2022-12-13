@@ -67,5 +67,7 @@ class Grid:
 
         return self.visited_grid.sum()
 
+
 # should think about how to calculate the grid size
-print(Grid('input.txt', 500).solve())
+print(f'Part 1:', Grid('input.txt', 500, no_knots=1).solve())
+print(f'Part 2:', Grid('input.txt', 500, no_knots=9).solve())

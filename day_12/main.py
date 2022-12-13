@@ -7,18 +7,21 @@ moves = {
     'left': np.array((0, -1))
 }
 
-def get_input(file):
+
+def parse(file):
     with open(file, 'r') as f:
-        grid = []
         lines = list(map(lambda x: x.strip().split(), f.readlines()))
-        for i in range(len(lines)):
-            grid.append([ord(c) - ord('a') for c in lines[i][0]])
+
+    grid = []
+    for i in range(len(lines)):
+        grid.append([ord(c) - ord('a') for c in lines[i][0]])
     height_grid = np.array(grid)
     S = tuple(x[0] for x in np.where(height_grid == ord('S') - ord('a')))
     E = tuple(x[0] for x in np.where(height_grid == ord('E') - ord('a')))
     height_grid[S] = 0
     height_grid[E] = 26
     return height_grid, S, E
+
 
 def can_move(direction, i, j, grid):
     """
@@ -54,7 +57,8 @@ def solve(grid, end):
                 queue.append((new_point, lenght+1))
     return no_steps
 
-height_grid, start, end = get_input('input.txt')
+
+height_grid, start, end = parse('input.txt')
 lenghts = solve(height_grid, end)
 print(f'Part 1: {lenghts[start]}')
 print(f'Part 2: {min(lenghts.values())}')

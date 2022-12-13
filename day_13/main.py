@@ -6,12 +6,11 @@ isint = lambda x: isinstance(x, int)
         
 def parse(file):
     with open(file, 'r') as f:
-        lines = list(map(lambda x: x.strip().split('\n\n'), f.readlines()))
-        lines = filter(lambda x: x != [''], lines)
+        lines = filter(lambda x: x != [''], list(map(lambda x: x.strip().split('\n\n'), f.readlines())))
+    
     tmp = []
     for line in lines:
-        if not re.match(r'[\[\]0-9,]*', line[0]):
-            return
+        if not re.match(r'[\[\]0-9,]*', line[0]): return
         tmp.append(eval(line[0]))
     return tmp
 

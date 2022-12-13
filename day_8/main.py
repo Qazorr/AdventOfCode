@@ -1,13 +1,11 @@
 import numpy as np
 
-def get_input(file):
+def parse(file):
     with open(file, 'r') as f:
-        return list(map(lambda x: x.strip(), f.readlines()))
-
-def to_int_array(lines):
+        lines = list(map(lambda x: x.strip(), f.readlines()))
     for i in range(len(lines)):
         lines[i] = np.array(list(map(int, [c for c in lines[i]])))
-    return np.array(lines)    
+    return np.array(lines)
 
 def part1(height_grid):
     visibility_grid = np.full(height_grid.shape, False)
@@ -47,6 +45,6 @@ def part2(height_grid):
     return num_visible.prod(2).max()
 
 if __name__ == "__main__":
-    inp = to_int_array(get_input('input.txt'))
+    inp = parse('input.txt')
     print(part1(inp))
     print(part2(inp))

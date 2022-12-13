@@ -1,6 +1,6 @@
 import re
 
-def get_input(file):
+def parse(file):
     with open(file, 'r') as f:
         return f.read().split()
 
@@ -22,6 +22,6 @@ def part2(inp):
     return re.sub("(.{40})", "\\1\n", image, 0, re.DOTALL)
 
 
-lines = get_input('input.txt')
+lines = parse('input.txt')
 print(part1(lines))
 print(part2(lines))
