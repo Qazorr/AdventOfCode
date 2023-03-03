@@ -19,18 +19,18 @@
     <tr>
     </tr>
         <td><a href="/day_03">Day 3</a></td>
-        <td></td>
-        <td></td>
+        <td>⭐</td>
+        <td>⭐</td>
     <tr>
     </tr>
         <td><a href="/day_04">Day 4</a></td>
-        <td></td>
-        <td></td>
+        <td>⭐</td>
+        <td>⭐</td>
     <tr>
     </tr>
         <td><a href="/day_05">Day 5</a></td>
-        <td></td>
-        <td></td>
+        <td>⭐</td>
+        <td>⭐</td>
     <tr>
     </tr>
         <td><a href="/day_06">Day 6</a></td>

@@ -1,1 +1,4 @@
+.vscode
+
 day_[012][0-9]/*.txt
+day_[012][0-9]/a.out
