@@ -1,7 +1,5 @@
 #include "./../helpers/helpers.h"
 
-#include <algorithm>
-
 int solve(std::vector<std::string> lines, int part)
 {
     long int surface = 0;
@@ -9,7 +7,7 @@ int solve(std::vector<std::string> lines, int part)
     {
         for (auto &line : lines)
         {
-            auto str_numbers = split(line, "x");
+            auto str_numbers = aoc::split(line, "x");
             std::vector<int> numbers;
             std::transform(str_numbers.begin(), str_numbers.end(), std::back_inserter(numbers), [&](std::string s)
                            { return std::stoi(s); });
@@ -22,7 +20,7 @@ int solve(std::vector<std::string> lines, int part)
     {
         for (auto &line : lines)
         {
-            auto str_numbers = split(line, "x");
+            auto str_numbers = aoc::split(line, "x");
             std::vector<int> numbers;
             std::transform(str_numbers.begin(), str_numbers.end(), std::back_inserter(numbers), [&](std::string s)
                            { return std::stoi(s); });
@@ -35,7 +33,7 @@ int solve(std::vector<std::string> lines, int part)
 
 int main(int argc, char *argv[])
 {
-    auto lines = handle_argv(argc, argv);
+    auto lines = aoc::handle_argv(argc, argv);
     std::cout << solve(lines, 1) << std::endl;
     std::cout << solve(lines, 2) << std::endl;
 }

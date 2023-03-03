@@ -1,7 +1,5 @@
 #include "./../helpers/helpers.h"
 
-#include <algorithm>
-
 int solve(std::string input, int part)
 {
     if(part == 1) {
@@ -20,7 +18,7 @@ int solve(std::string input, int part)
 
 int main(int argc, char *argv[])
 {
-    auto line = handle_argv(argc, argv)[0];
+    auto line = aoc::handle_argv(argc, argv)[0];
     std::cout << solve(line, 1) << std::endl;
     std::cout << solve(line, 2) << std::endl;
 }
