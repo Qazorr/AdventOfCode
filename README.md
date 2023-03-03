@@ -8,47 +8,47 @@
         <th>Part 1</th>
         <th>Part 2</th>
     </tr>
-        <td><a href="/day_1">Day 1</a></td>
+        <td><a href="/day_01">Day 1</a></td>
         <td>⭐</td>
         <td>⭐</td>
     <tr>
     </tr>
-        <td><a href="/day_2">Day 2</a></td>
+        <td><a href="/day_02">Day 2</a></td>
         <td>⭐</td>
         <td>⭐</td>
     <tr>
     </tr>
-        <td><a href="/day_3">Day 3</a></td>
+        <td><a href="/day_03">Day 3</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_4">Day 4</a></td>
+        <td><a href="/day_04">Day 4</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_5">Day 5</a></td>
+        <td><a href="/day_05">Day 5</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_6">Day 6</a></td>
+        <td><a href="/day_06">Day 6</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_7">Day 7</a></td>
+        <td><a href="/day_07">Day 7</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_8">Day 8</a></td>
+        <td><a href="/day_08">Day 8</a></td>
         <td></td>
         <td></td>
     <tr>
     </tr>
-        <td><a href="/day_9">Day 9</a></td>
+        <td><a href="/day_09">Day 9</a></td>
         <td></td>
         <td></td>
     <tr>
