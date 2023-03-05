@@ -34,13 +34,13 @@
     <tr>
     </tr>
         <td><a href="/day_06">Day 6</a></td>
-        <td></td>
-        <td></td>
+        <td>⭐</td>
+        <td>⭐</td>
     <tr>
     </tr>
         <td><a href="/day_07">Day 7</a></td>
-        <td></td>
-        <td></td>
+        <td>⭐</td>
+        <td>⭐</td>
     <tr>
     </tr>
         <td><a href="/day_08">Day 8</a></td>
