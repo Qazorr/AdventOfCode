@@ -76,6 +76,6 @@ int solve(const std::vector<std::string> &lines, int part)
 int main(int argc, char *argv[])
 {
     auto lines = aoc::handle_argv(argc, argv);
-    std::cout << solve(lines, 1) << std::endl;
-    std::cout << solve(lines, 2) << std::endl;
+    aoc::solve_wrapper(solve, lines, 1);
+    aoc::solve_wrapper(solve, lines, 2);
 }

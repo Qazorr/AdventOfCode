@@ -1,7 +1,8 @@
 #include "./../helpers/helpers.h"
 
-int solve(std::string input, int part)
+int solve(const std::vector<std::string> &lines, int part)
 {
+    std::string input = lines[0];
     if(part == 1) {
         return std::count(input.begin(), input.end(), '(') 
                     - std::count(input.begin(), input.end(), ')');
@@ -18,7 +19,7 @@ int solve(std::string input, int part)
 
 int main(int argc, char *argv[])
 {
-    auto line = aoc::handle_argv(argc, argv)[0];
-    std::cout << solve(line, 1) << std::endl;
-    std::cout << solve(line, 2) << std::endl;
+    auto lines = aoc::handle_argv(argc, argv);
+    aoc::solve_wrapper(solve, lines, 1);
+    aoc::solve_wrapper(solve, lines, 2);
 }

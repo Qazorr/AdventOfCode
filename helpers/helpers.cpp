@@ -47,6 +47,7 @@ void aoc::display(const std::vector<std::string> &lines)
         std::cout << i << ": " << lines[i] << std::endl;
 }
 
+
 std::complex<double> aoc::ImaginaryGrid::get_cur_pos() { return this->cur_position; }
 
 void aoc::ImaginaryGrid::move(std::string where)

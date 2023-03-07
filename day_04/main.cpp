@@ -20,14 +20,14 @@ std::string to_MD5_hash(const std::string &s)
     return oss.str();
 }
 
-int solve(const std::string &line, int part)
+int solve(const std::vector<std::string> &lines, int part)
 {
     int number = 0;
-    std::string hash, to_hash;
+    std::string hash, to_hash, s = lines[0];
     std::string to_find = part == 1 ? "00000" : "000000";
     while (1)
     {
-        to_hash = line + std::to_string(number);
+        to_hash = s + std::to_string(number);
         hash = to_MD5_hash(to_hash);
         std::cout << hash << " " << to_hash << "\r";
         if (hash.rfind(to_find, 0) == 0)
@@ -41,7 +41,7 @@ int solve(const std::string &line, int part)
 
 int main(int argc, char *argv[])
 {
-    std::string str = aoc::handle_argv(argc, argv)[0];
-    std::cout << solve(str, 1) << std::endl;
-    std::cout << solve(str, 2) << std::endl;
+    auto lines = aoc::handle_argv(argc, argv);
+    aoc::solve_wrapper(solve, lines, 1);
+    aoc::solve_wrapper(solve, lines, 2);
 }

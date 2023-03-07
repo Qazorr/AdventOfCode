@@ -16,17 +16,18 @@ std::string interpret_movement(char c)
         return "bad";
 }
 
-int solve(const std::string &line, int part) {
+int solve(const std::vector<std::string> &lines, int part) {
     aoc::ImaginaryGrid santa, robo_santa;
+    std::string movement = lines[0];
     std::unordered_set<std::complex<double>, aoc::ImaginaryGrid::ComplexHash> houses{std::complex<double>(0.0, 0.0)};
     if(part == 1) {
-        for(const char &c : line) {
+        for(const char &c : movement) {
             santa.move(interpret_movement(c));
             houses.insert(santa.get_cur_pos());
         }
     } else if(part == 2) {
         bool santa_turn = true;
-        for (const char &c : line) {
+        for (const char &c : movement) {
             if(santa_turn) {
                 santa.move(interpret_movement(c));
                 houses.insert(santa.get_cur_pos());
@@ -43,7 +44,7 @@ int solve(const std::string &line, int part) {
 
 int main(int argc, char *argv[])
 {
-    auto line = aoc::handle_argv(argc, argv)[0];
-    std::cout << solve(line, 1) << std::endl;
-    std::cout << solve(line, 2) << std::endl;
+    auto lines = aoc::handle_argv(argc, argv);
+    aoc::solve_wrapper(solve, lines, 1);
+    aoc::solve_wrapper(solve, lines, 2);
 }

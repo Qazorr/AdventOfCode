@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <functional>
 #include <numeric>
+#include <chrono>
 
 namespace aoc
 {
@@ -18,6 +19,18 @@ namespace aoc
     std::vector<std::string> handle_argv(int argc, char *argv[]);
     std::vector<std::string> split(std::string s, std::string delimiter);
     void display(const std::vector<std::string> &lines);
+
+    template <typename F>
+    void solve_wrapper(F solve, const std::vector<std::string> &lines, int part)
+    {
+        auto start = std::chrono::high_resolution_clock::now();
+        int result = solve(lines, part);
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed_seconds = end - start;
+
+        std::cout << "\033[33m[Time elapsed] \033[1m" << elapsed_seconds.count() << " seconds\033[0m\n";
+        std::cout << "\033[32m[Part " << part << "] \033[1m" << result << "\033[0m\n\n";
+    }
 
     //? class with imaginary grid that helps with problems in which movement in 2d plane occurs
     class ImaginaryGrid

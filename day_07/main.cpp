@@ -28,7 +28,7 @@ uint16_t operation(uint16_t x, std::string op, uint16_t y)
 }
 
 // todo: try to erase/skip elements used
-int solve(std::vector<std::string> lines, int part)
+int solve(const std::vector<std::string> &lines, int part)
 {
     if (part == 1)
     {
@@ -103,13 +103,16 @@ int solve(std::vector<std::string> lines, int part)
     else if (part == 2)
     {
         uint16_t a = solve(lines, 1);
+
+        std::vector<std::string> line_copy(lines);
+
         std::regex find_b_regex("[0-9]+ -> b");
-        for (int i = 0; i < lines.size(); i++)
+        for (int i = 0; i < line_copy.size(); i++)
         {
-            if (std::regex_match(lines[i], find_b_regex))
-                lines[i] = std::to_string(a) + " -> b";
+            if (std::regex_match(line_copy[i], find_b_regex))
+                line_copy[i] = std::to_string(a) + " -> b";
         }
-        return solve(lines, 1);
+        return solve(line_copy, 1);
     }
     return -1;
 }
@@ -117,6 +120,6 @@ int solve(std::vector<std::string> lines, int part)
 int main(int argc, char *argv[])
 {
     auto lines = aoc::handle_argv(argc, argv);
-    std::cout << solve(lines, 1) << std::endl;
-    std::cout << solve(lines, 2) << std::endl;
+    aoc::solve_wrapper(solve, lines, 1);
+    aoc::solve_wrapper(solve, lines, 2);
 }
